@@ -1,6 +1,8 @@
 package repository
 
-import "go.template/internal/model"
+import (
+	"go.template/internal/model"
+)
 
 type ExampleRepository struct {
 	Repository[model.Example]
@@ -8,4 +10,6 @@ type ExampleRepository struct {
 
 func NewExample() *ExampleRepository {
 	return &ExampleRepository{}
-}
+} 
+
+//func(e* ExampleRepository)Extend(db *gorm.DB) {}

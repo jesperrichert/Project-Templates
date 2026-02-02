@@ -6,6 +6,7 @@ type Example struct {
 	Email string
 }
 
+//DTOs - Data transfer objects
 type ExampleRequest struct {
 	Name  string `json:"name"`
 	Email string `json:"email"`

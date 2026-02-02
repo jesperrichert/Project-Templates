@@ -58,9 +58,9 @@ func (e *ExampleController) Post(ctx *gin.Context) {
 // GET
 func (e *ExampleController) Get(ctx *gin.Context) {
 	var example model.Example
+	id := ctx.Param("id")  // -> id = /api/:id
 
-	id := ctx.Param("id")
-	error := e.repository.GetById(e.db, &example, id)
+	error := e.repository.Get(e.db, &example, id)
 	if errors.Is(error, gorm.ErrRecordNotFound) {
 		e.service.Log("Not Found")
 		ctx.JSON(http.StatusNotFound, gin.H{"error": http.StatusText(http.StatusNotFound)})
@@ -68,7 +68,13 @@ func (e *ExampleController) Get(ctx *gin.Context) {
 	} else if error != nil {
 		e.service.Log("Internal Server error")
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": http.StatusText(http.StatusInternalServerError)})
-	}
+	} 
+
+	ctx.JSON(http.StatusOK, model.ExampleResponse{
+		ID: example.ID, 
+		Name: example.Name, 
+		Email: example.Email,
+	})
 }
 
 // LIST
@@ -76,7 +82,7 @@ func (e *ExampleController) List(ctx *gin.Context) {
 	var examples []model.Example
 	var response []model.ExampleResponse
 
-	if err := e.repository.GetMany(e.db, &examples); err != nil {
+	if err := e.repository.List(e.db, &examples); err != nil {
 		e.service.Log("Internal Service Error")
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": http.StatusText(http.StatusInternalServerError)})
 		return

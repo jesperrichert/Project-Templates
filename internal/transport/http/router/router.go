@@ -7,7 +7,8 @@ import (
 
 type RouterConfig struct {
 	App               *gin.Engine
-	ExampleController *http.ExampleController
+	ExampleController *http.ExampleController 
+	//Register Controller Here
 }
 
 func (c *RouterConfig) Setup() {
@@ -19,7 +20,7 @@ func (c *RouterConfig) Setup() {
 	{
 		api.GET("/:id", c.ExampleController.Get)
 		api.GET("/", c.ExampleController.List)
-		api.GET("/", c.ExampleController.Post)
+		api.POST("/", c.ExampleController.Post)
 	}
 
 }

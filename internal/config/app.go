@@ -5,6 +5,7 @@ import (
 	"go.template/internal/repository"
 	"go.template/internal/services"
 	"go.template/internal/transport/http"
+	"go.template/internal/transport/http/router"
 	"gorm.io/gorm"
 )
 
@@ -18,9 +19,15 @@ func Build(config *Appconfig) {
 	exampleRepository := repository.NewExample()
 
 	//Register Services
-	exampleService := services.N
+	exampleService := services.NewExampleService()
 
 	//Register Controller
-	exampleController := http.ExampleController
+	exampleController := http.NewExampleController(config.DB, exampleService, exampleRepository) 
 
+	routeConfig := router.RouterConfig{
+		App: config.App, 
+		ExampleController: exampleController, 
+	} 
+
+	routeConfig.Setup()
 }
