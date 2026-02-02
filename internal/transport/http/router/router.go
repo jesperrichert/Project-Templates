@@ -1,0 +1,25 @@
+package router
+
+import (
+	"github.com/gin-gonic/gin"
+	"go.template/internal/transport/http"
+)
+
+type RouterConfig struct {
+	App               *gin.Engine
+	ExampleController *http.ExampleController
+}
+
+func (c *RouterConfig) Setup() {
+	if c.App == nil {
+		c.App = gin.Default()
+	}
+
+	api := c.App.Group("/api")
+	{
+		api.GET("/:id", c.ExampleController.Get)
+		api.GET("/", c.ExampleController.List)
+		api.GET("/", c.ExampleController.Post)
+	}
+
+}
