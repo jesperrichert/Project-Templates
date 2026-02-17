@@ -1,3 +1,5 @@
-# Go-Template
+# Projectify 
 
-a Template for a go api Project with gin and gorm
+Small CLI using the "language" CLI and projectify CLI to create simple projects for some use cases... 
+
+COMING SOON 🥉
