@@ -1,2 +1,2 @@
-pub mod commands;
-pub mod options;
+pub mod project;
+pub mod config;
