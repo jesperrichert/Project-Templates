@@ -1,0 +1,1 @@
+/home/xyzjesper/Dokumente/GitHub/Project-Templates/cli/target/debug/libcli.rlib: /home/xyzjesper/Dokumente/GitHub/Project-Templates/cli/src/commands/mod.rs /home/xyzjesper/Dokumente/GitHub/Project-Templates/cli/src/lib.rs /home/xyzjesper/Dokumente/GitHub/Project-Templates/cli/src/options/mod.rs
