@@ -1,16 +1,17 @@
+use crate::project::Project;
+use serde::{Deserialize, Serialize};
+use std::error::Error;
 use std::fs::File;
 use std::io::BufReader;
 use std::path::Path;
-use serde::{Deserialize, Serialize};
-use std::error::Error;
 
 #[derive(Debug, Deserialize, Serialize)]
 pub struct Config {
-    project_template_url: String,
+    pub project_template_url: String,
 }
 
 impl Config {
-    pub fn new(template_url : String) -> Self {
+    pub fn new(template_url: String) -> Self {
         Config {
             project_template_url: template_url,
         }
@@ -27,5 +28,13 @@ impl Config {
         // Return the `User`.
         Ok(u)
     }
-    
+
+    pub async fn get_project_templates(&self) -> Vec<Project> {
+        reqwest::get(&self.project_template_url)
+            .await
+            .unwrap()
+            .json::<Vec<Project>>()
+            .await
+            .unwrap()
+    }
 }
