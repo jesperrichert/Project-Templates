@@ -1,8 +1,11 @@
-use clap::{Parser, Subcommand, Command, Args};
+use clap::{ Parser, Subcommand };
 use cli::config::Config;
-use std::env;
+use dirs::{ config_dir, config_local_dir };
+use fancy::printcoln;
+use std::{ env, fs };
 use std::fs::File;
 use std::io::Write;
+use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
 #[command(version)]
@@ -33,58 +36,76 @@ pub enum Commands {
 #[tokio::main]
 async fn main() {
     let cli = CLI::parse();
+    printcoln!("[bold]Projectify CLI");
 
-    let path = env::current_dir().unwrap();
-    let config = Config::from_file(path.join("projectify.json"))
-        .unwrap_or_else(|_| Config::new("".to_string()));
+    let path = config_dir().unwrap().join("dev.xyzjesper.projectify");
+    if !path.exists() {
+        fs::create_dir(
+            format!("{}/dev.xyzjesper.projectify", config_dir().unwrap().display())
+        ).unwrap();
+    }
+
+    let config = Config::from_file(path.join("config.json")).unwrap_or_else(|_|
+        Config::new("".to_string())
+    );
 
     match &cli.commands {
         Commands::Create { id, name, path } => {
-            config.get_project_templates().await.iter().for_each(|p| {
-                if (p.id == *id) {
-                    println!(">> Found project with ID {}", id);
-                    p.create(path.clone(), name.clone());
-                } else {
-                    println!("No Template found...");
-                    return;
+            match config.get_project_templates().await {
+                Ok(c) =>
+                    c.iter().for_each(|p| {
+                        if p.id == *id {
+                            printcoln!("[white|bold]>> Found project with ID {}", id);
+                            p.create(path.clone(), name.clone());
+                        } else {
+                            printcoln!("[i]No Template found...");
+                            return;
+                        }
+                    }),
+                Err(_) => {
+                    printcoln!("[red]>> Failed to find your config data...");
                 }
-            });
+            }
             return;
         }
         Commands::Config { templates_url } => {
-            let mut file = File::create(path.join("projectify.json")).unwrap();
-            if (!templates_url.ends_with(".json")) {
-                println!("Use a raw Json URL");
+            let mut file = File::create(path.join("config.json")).unwrap();
+            if !templates_url.ends_with(".json") {
+                printcoln!("[red]Use a raw Json URL");
                 return;
             }
 
             file.write_all(
-                serde_json::to_string(&Config::new(templates_url.clone()))
-                    .unwrap()
-                    .as_bytes(),
-            )
-            .unwrap();
-            println!("Saved your url to config...");
+                serde_json::to_string(&Config::new(templates_url.clone())).unwrap().as_bytes()
+            ).unwrap();
+            printcoln!("[white|bold]Saved your url to config...");
             return;
         }
         Commands::List {} => {
-            let data = config.get_project_templates().await;
-            println!("\n\nProjects");
+            match config.get_project_templates().await {
+                Ok(data) => {
+                    printcoln!("\n\n[bold|white]Projects");
 
-            if (data.is_empty()) {
-                println!("No project found");
-                return;
+                    if data.is_empty() {
+                        printcoln!("[i]No project found");
+                        return;
+                    }
+
+                    data.iter().for_each(|p| {
+                        printcoln!("> [bold]Name: [white]{}", p.name);
+                        printcoln!("  - [bold]ID: [white]{}", p.id);
+                        printcoln!("  - [bold]Url: [white]{}", p.repository_url);
+                        printcoln!("  - [bold]Branch: [white]{}", p.branch);
+                        printcoln!(
+                            "--------------------------------------------------------------------------"
+                        );
+                    });
+                }
+                Err(_) => {
+                    printcoln!("[red]>> Failed to find your config data...");
+                }
             }
 
-            data.iter().for_each(|p| {
-                println!("> Name: {}", p.name);
-                println!("  - ID: {}", p.id);
-                println!("  - Url: {}", p.repository_url);
-                println!("  - Branch: {}", p.branch);
-                println!(
-                    "--------------------------------------------------------------------------"
-                );
-            });
             return;
         }
     }
