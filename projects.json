@@ -40,5 +40,11 @@
     "name": "Nuxt Template",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@nuxt"
+  },
+  {
+    "id": "svelte",
+    "name": "Svelte Template",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@svelte"
   }
 ]
