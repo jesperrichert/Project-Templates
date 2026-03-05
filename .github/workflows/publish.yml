@@ -23,11 +23,11 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: projectler
-          path: /home/runner/work/Project-Templates/Project-Templates/cli/target/release/projectler
+          path: /home/runner/work/Project-Templates/Project-Templates/projectler/target/release/projectler
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.run_id }}
           name: Auto Build ${{ github.run_id }}
-          files: /home/runner/work/Project-Templates/Project-Templates/cli/target/release/projectler
+          files: /home/runner/work/Project-Templates/Project-Templates/projectler/target/release/projectler
           generate_release_notes: true
