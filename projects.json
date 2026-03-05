@@ -34,5 +34,11 @@
     "name": "VUE Template",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@vue"
+  },
+  {
+    "id": "nuxt",
+    "name": "Nuxt Template",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@nuxt"
   }
 ]
