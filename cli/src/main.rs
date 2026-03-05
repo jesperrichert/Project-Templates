@@ -36,7 +36,11 @@ pub enum Commands {
 #[tokio::main]
 async fn main() {
     let cli = CLI::parse();
-    printcoln!("[bold]Projectify CLI");
+    printcoln!("▄▖     ▘    ▗ ▘▐▘    ▄▖▖ ▄▖");
+    printcoln!("▙▌▛▘▛▌ ▌█▌▛▘▜▘▌▜▘▌▌  ▌ ▌ ▐ ");
+    printcoln!("▌ ▌ ▙▌ ▌▙▖▙▖▐▖▌▐ ▙▌  ▙▖▙▖▟▖");
+    printcoln!("      ▙▌         ▄▌        ");
+    printcoln!("\n");
 
     let path = config_dir().unwrap().join("dev.xyzjesper.projectify");
     if !path.exists() {
@@ -84,7 +88,7 @@ async fn main() {
         Commands::List {} => {
             match config.get_project_templates().await {
                 Ok(data) => {
-                    printcoln!("\n\n[bold|white]Projects");
+                    printcoln!("[bold|white]Project Templates:");
 
                     if data.is_empty() {
                         printcoln!("[i]No project found");

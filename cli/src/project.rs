@@ -10,6 +10,7 @@ pub struct Project {
     pub name: String,
     pub repository_url: String,
     pub branch: String,
+
 }
 
 impl Project {
