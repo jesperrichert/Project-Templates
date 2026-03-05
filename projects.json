@@ -16,5 +16,11 @@
     "name": "React Router Template",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@react-router-vite"
+  },
+  {
+    "id": "react-vite",
+    "name": "React Template",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@react-vite"
   }
 ]
