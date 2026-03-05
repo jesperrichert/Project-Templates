@@ -19,4 +19,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name:
-          path: cli/target/debug/cli
+          path: /home/runner/work/Project-Templates/Project-Templates/cli/target/debug/cli
