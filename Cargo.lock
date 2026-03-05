@@ -3,7 +3,7 @@
 version = 4
 
 [[package]]
-name = "Project-Templates"
+name = "simple-rust"
 version = "0.1.0"
 dependencies = [
  "fancy",
