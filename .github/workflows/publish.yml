@@ -5,6 +5,10 @@ on:
     branches:
       - projectify
 
+permissions:
+  packages: write
+  contents: write
+
 jobs:
   formatting:
     name: cargo fmt
