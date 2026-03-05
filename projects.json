@@ -46,5 +46,11 @@
     "name": "Svelte Template",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@svelte"
+  },
+  {
+    "id": "simple-rust",
+    "name": "Rust Default",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@rust-default"
   }
 ]
