@@ -1,0 +1,7 @@
+﻿services:
+  cstemplate.api:
+    image: cstemplate.api
+    build:
+      context: .
+      dockerfile: cstemplate.Api/Dockerfile
+
