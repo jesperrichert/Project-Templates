@@ -22,5 +22,11 @@
     "name": "React Template",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@react-vite"
+  },
+  {
+    "id": "nextjs",
+    "name": "NextJS Template",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@nextjs"
   }
 ]
