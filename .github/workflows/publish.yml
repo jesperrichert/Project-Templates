@@ -30,3 +30,4 @@ jobs:
           tag_name: ${{ github.run_id }}
           name: Auto Build ${{ github.run_id }}
           files: /home/runner/work/Project-Templates/Project-Templates/cli/target/debug/cli
+          generate_release_notes: true
