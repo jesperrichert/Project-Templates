@@ -18,5 +18,5 @@ jobs:
       - run: cd cli && cargo build
       - uses: actions/upload-artifact@v4
         with:
-          name:
+          name: projectify
           path: /home/runner/work/Project-Templates/Project-Templates/cli/target/debug/cli
