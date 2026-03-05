@@ -20,7 +20,7 @@ impl Project {
             .branch(&self.branch)
             .clone(&self.repository_url, &PathBuf::from(&path))
         {
-            Ok(e) => {
+            Ok(_) => {
                 printcoln!("[green]>> Repository downloaded");
             }
             Err(e) => {
