@@ -1,8 +1,8 @@
 [
   {
-    "id": "cs-web-apo",
-    "name": "C# Web API",
+    "id": "kt-mc-paper",
+    "name": "Kotlin Minecraft Paper",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
-    "branch": "template@c#-api"
+    "branch": "template@kt-mc-paper"
   }
 ]
