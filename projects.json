@@ -52,5 +52,11 @@
     "name": "Rust Default",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@rust-default"
+  },
+  {
+    "id": "csapi",
+    "name": "C# Web API",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@c#-api"
   }
 ]
