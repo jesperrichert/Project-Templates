@@ -10,5 +10,11 @@
     "name": "Kotlin Minecraft Velocity",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@kt-mc-velocity"
+  },
+  {
+    "id": "react-router-vite",
+    "name": "React Router Template",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@react-router-vite"
   }
 ]
