@@ -1,3 +1,4 @@
-# Go-Template
+# PaperTemplate
 
-a Template for a go api Project with gin and gorm
+
+Simple Template to create a Paper plugin in Minecraft with Kotlin.
