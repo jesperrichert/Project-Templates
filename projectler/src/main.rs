@@ -1,5 +1,5 @@
 use clap::{Parser, Subcommand};
-use cli::config::Config;
+use projectler::config::Config;
 use dirs::config_dir;
 use fancy::printcoln;
 use std::fs;
@@ -35,16 +35,15 @@ pub enum Commands {
 #[tokio::main]
 async fn main() {
     let cli = CLI::parse();
-    printcoln!("▄▖     ▘    ▗ ▘▐▘    ▄▖▖ ▄▖");
-    printcoln!("▙▌▛▘▛▌ ▌█▌▛▘▜▘▌▜▘▌▌  ▌ ▌ ▐ ");
-    printcoln!("▌ ▌ ▙▌ ▌▙▖▙▖▐▖▌▐ ▙▌  ▙▖▙▖▟▖");
-    printcoln!("      ▙▌         ▄▌        ");
+    printcoln!("░█▀█░█▀▄░█▀█░▀▀█░█▀▀░█▀▀░▀█▀░█░░░█▀▀░█▀▄");
+    printcoln!("░█▀▀░█▀▄░█░█░░░█░█▀▀░█░░░░█░░█░░░█▀▀░█▀▄");
+    printcoln!("░▀░░░▀░▀░▀▀▀░▀▀░░▀▀▀░▀▀▀░░▀░░▀▀▀░▀▀▀░▀░▀");
     printcoln!("\n");
 
-    let path = config_dir().unwrap().join("dev.xyzjesper.projectify");
+    let path = config_dir().unwrap().join("dev.xyzjesper.projectler");
     if !path.exists() {
         fs::create_dir(format!(
-            "{}/dev.xyzjesper.projectify",
+            "{}/dev.xyzjesper.projectler",
             config_dir().unwrap().display()
         ))
         .unwrap();

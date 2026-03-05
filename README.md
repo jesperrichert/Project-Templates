@@ -1,20 +1,20 @@
-# Projectify
+# projectler
 
-> **Warning:** Please note that Projectify is currently in beta.
+> **Warning:** Please note that projectler is currently in beta.
 
 CLI tool to manage project templates from Git.  
 To create a template, define a `projects.json` with the required structure.
 
 Then you can set the template URL with the CLI:
 
-`projectify config -t <url>`
+`projectler config -t <url>`
 
 After this, you can see your templates with:
 
-`projectify list`
+`projectler list`
 
 To create a project from a template, use:
 
-`projectify create -i <id> -n <name> -p <path>`
+`projectler create -i <id> -n <name> -p <path>`
 
-Use `projectify --help` to show the help message.
+Use `projectler --help` to show the help message.
