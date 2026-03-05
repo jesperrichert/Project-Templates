@@ -28,5 +28,11 @@
     "name": "NextJS Template",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@nextjs"
+  },
+  {
+    "id": "vue-vite",
+    "name": "VUE Template",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@vue"
   }
 ]
