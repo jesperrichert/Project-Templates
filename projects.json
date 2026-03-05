@@ -1,8 +1,14 @@
 [
   {
-    "id": "kt-mc-paper",
+    "id": "papertemplate",
     "name": "Kotlin Minecraft Paper",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@kt-mc-paper"
+  },
+  {
+    "id": "velocitytemplate",
+    "name": "Kotlin Minecraft Paper",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@kt-mc-velocity"
   }
 ]
