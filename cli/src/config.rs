@@ -1,7 +1,5 @@
 use crate::project::Project;
-use fancy::printcoln;
 use serde::{Deserialize, Serialize};
-use core::panic;
 use std::error::Error;
 use std::fs::File;
 use std::io::BufReader;
@@ -27,11 +25,10 @@ impl Config {
     }
 
     pub async fn get_project_templates(&self) -> Result<Vec<Project>, ()> {
-      let response =  reqwest::get(&self.project_template_url)
-            .await;
+        let response = reqwest::get(&self.project_template_url).await;
         match response {
             Ok(r) => Ok(r.json::<Vec<Project>>().await.unwrap()),
-            Err(_) => Err(())
-        }    
+            Err(_) => Err(()),
+        }
     }
 }

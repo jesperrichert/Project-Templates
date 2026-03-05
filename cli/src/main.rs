@@ -1,11 +1,10 @@
-use clap::{ Parser, Subcommand };
+use clap::{Parser, Subcommand};
 use cli::config::Config;
-use dirs::{ config_dir, config_local_dir };
+use dirs::config_dir;
 use fancy::printcoln;
-use std::{ env, fs };
+use std::fs;
 use std::fs::File;
 use std::io::Write;
-use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
 #[command(version)]
@@ -44,28 +43,28 @@ async fn main() {
 
     let path = config_dir().unwrap().join("dev.xyzjesper.projectify");
     if !path.exists() {
-        fs::create_dir(
-            format!("{}/dev.xyzjesper.projectify", config_dir().unwrap().display())
-        ).unwrap();
+        fs::create_dir(format!(
+            "{}/dev.xyzjesper.projectify",
+            config_dir().unwrap().display()
+        ))
+        .unwrap();
     }
 
-    let config = Config::from_file(path.join("config.json")).unwrap_or_else(|_|
-        Config::new("".to_string())
-    );
+    let config =
+        Config::from_file(path.join("config.json")).unwrap_or_else(|_| Config::new("".to_string()));
 
     match &cli.commands {
         Commands::Create { id, name, path } => {
             match config.get_project_templates().await {
-                Ok(c) =>
-                    c.iter().for_each(|p| {
-                        if p.id == *id {
-                            printcoln!("[white|bold]>> Found project with ID {}", id);
-                            p.create(path.clone(), name.clone());
-                        } else {
-                            printcoln!("[i]No Template found...");
-                            return;
-                        }
-                    }),
+                Ok(c) => c.iter().for_each(|p| {
+                    if p.id == *id {
+                        printcoln!("[white|bold]>> Found project with ID {}", id);
+                        p.create(path.clone(), name.clone());
+                    } else {
+                        printcoln!("[i]No Template found...");
+                        return;
+                    }
+                }),
                 Err(_) => {
                     printcoln!("[red]>> Failed to find your config data...");
                 }
@@ -80,8 +79,11 @@ async fn main() {
             }
 
             file.write_all(
-                serde_json::to_string(&Config::new(templates_url.clone())).unwrap().as_bytes()
-            ).unwrap();
+                serde_json::to_string(&Config::new(templates_url.clone()))
+                    .unwrap()
+                    .as_bytes(),
+            )
+            .unwrap();
             printcoln!("[white|bold]Saved your url to config...");
             return;
         }
