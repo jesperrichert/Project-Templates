@@ -10,7 +10,9 @@
     "id": "velocitytemplate",
     "name": "Kotlin Minecraft Velocity",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
-    "branch": "template@kt-mc-velocity"
+    "branch": "template@kt-mc-velocity",
+    "open_command": "",
+    "install_command": ""
   },
   {
     "id": "react-router-vite",
