@@ -1,7 +1,7 @@
 ﻿services:
-  cstemplate.api:
-    image: cstemplate.api
+  csapitemplate.api:
+    image: csapitemplate.api
     build:
       context: .
-      dockerfile: cstemplate.Api/Dockerfile
+      dockerfile: csapitemplate.Api/Dockerfile
 

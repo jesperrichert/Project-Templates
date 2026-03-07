@@ -7,7 +7,7 @@
         <InvariantGlobalization>true</InvariantGlobalization>
         <PublishAot>true</PublishAot>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-        <RootNamespace>cstemplate.Api</RootNamespace>
+        <RootNamespace>csapitemplate.Api</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

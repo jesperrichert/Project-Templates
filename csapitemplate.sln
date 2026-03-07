@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csapi.Api", "csapi.Api\csapi.Api.csproj", "{56FAEC7E-6E68-46AF-8130-EEAE20EB785A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "csapitemplate.Api", "csapitemplate.Api\csapitemplate.Api.csproj", "{56FAEC7E-6E68-46AF-8130-EEAE20EB785A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A32290DF-2B80-4459-A811-8F8F507AE99E}"
 	ProjectSection(SolutionItems) = preProject
