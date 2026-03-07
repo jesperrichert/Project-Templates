@@ -58,9 +58,9 @@
     "branch": "template@rust-default"
   },
   {
-    "id": "csapi",
-    "name": "C# Web API",
+    "id": "blazor",
+    "name": "C# Blazor",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
-    "branch": "template@c#-api"
+    "branch": "template@c#-blazor"
   }
 ]
