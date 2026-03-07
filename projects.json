@@ -3,7 +3,8 @@
     "id": "papertemplate",
     "name": "Kotlin Minecraft Paper",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
-    "branch": "template@kt-mc-paper"
+    "branch": "template@kt-mc-paper",
+    "open_command": "idea"
   },
   {
     "id": "velocitytemplate",
