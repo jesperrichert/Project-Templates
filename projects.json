@@ -4,6 +4,7 @@
     "name": "Kotlin Minecraft Paper",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@kt-mc-paper",
+    "install_command": "ls",
     "open_command": "idea"
   },
   {
