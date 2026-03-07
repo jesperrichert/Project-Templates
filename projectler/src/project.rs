@@ -1,8 +1,8 @@
+use crate::options::Options;
 use fancy::printcoln;
 use serde::{Deserialize, Serialize};
 use std::fs;
 use std::fs::write;
-use std::io::Read;
 use std::path::PathBuf;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -11,10 +11,12 @@ pub struct Project {
     pub name: String,
     pub repository_url: String,
     pub branch: String,
+    pub open_command: Option<String>,
+    pub install_command: Option<String>,
 }
 
 impl Project {
-    pub fn create(&self, path: String, name: String) {
+    pub fn create(&self, path: String, name: String, options: &Options) {
         printcoln!("[#808080]Cloning Repo from your url");
 
         let _ = match git2::build::RepoBuilder::new()
@@ -44,6 +46,15 @@ impl Project {
             self.name,
             path
         );
+
+        if self.install_command.is_some() {
+            printcoln!("Found install command for template.");
+            options.run_install_command(self.install_command.as_ref().unwrap(), &path);
+        }
+        if self.open_command.is_some() {
+            printcoln!("Found open command for template.");
+            options.run_open_command(self.open_command.as_ref().unwrap(), &path);
+        }
     }
 }
 
@@ -53,10 +64,12 @@ pub(crate) fn build_project(path: &String, id: String, name: String) {
     let paths = fs::read_dir(directory).unwrap();
     paths.for_each(|path| {
         let old_path = path.unwrap().path();
+
         let new_path = old_path
             .display()
             .to_string()
             .replace(&id.clone(), &name.clone());
+
         fs::rename(&old_path, &new_path).expect("Failed to rename...");
 
         let path = PathBuf::from(&new_path);

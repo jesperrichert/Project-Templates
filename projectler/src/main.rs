@@ -2,6 +2,7 @@ use clap::{Parser, Subcommand};
 use dirs::config_dir;
 use fancy::printcoln;
 use projectler::config::Config;
+use projectler::options::Options;
 use std::fs;
 use std::fs::File;
 use std::io::Write;
@@ -23,12 +24,16 @@ pub enum Commands {
     },
 
     Create {
-        #[arg(short, long)]
-        id: String,
+        #[arg(short = 't', long)]
+        template: String,
         #[arg(short, long)]
         name: String,
         #[arg(short, long)]
         path: String,
+        #[arg(short = 'i', long)]
+        with_install_command: bool,
+        #[arg(short = 'o', long)]
+        with_open_command: bool,
     },
 }
 
@@ -53,12 +58,22 @@ async fn main() {
         Config::from_file(path.join("config.json")).unwrap_or_else(|_| Config::new("".to_string()));
 
     match &cli.commands {
-        Commands::Create { id, name, path } => {
+        Commands::Create {
+            template,
+            name,
+            path,
+            with_install_command,
+            with_open_command,
+        } => {
             match config.get_project_templates().await {
                 Ok(c) => c.iter().for_each(|p| {
-                    if p.id == *id {
-                        printcoln!("[white|bold]>> Found project with ID {}", id);
-                        p.create(path.clone(), name.clone());
+                    if p.id == *template {
+                        printcoln!("[white|bold]>> Found project with ID {}", template);
+                        p.create(
+                            path.clone(),
+                            name.clone(),
+                            &Options::new(*with_open_command, *with_install_command),
+                        );
                         return;
                     }
                 }),
