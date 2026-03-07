@@ -1,0 +1,12 @@
+﻿@using ShadcnBlazor.Extras.Toasts
+@using ShadcnBlazor.Portals
+
+<Router AppAssembly="@typeof(App).Assembly" NotFoundPage="typeof(UI.Shared.Partials.NotFound)">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+        <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
+    </Found>
+</Router>
+
+<PortalOutlet />
+<ToastLauncher />

@@ -1,2 +1,4 @@
-/csapi.Api/obj/
-/csapi.Api/bin/
+/blazor.Api/obj/
+/blazor.Api/bin/
+/blazor.Frontend/obj/
+/blazor.Frontend/bin/

@@ -5,3 +5,15 @@
       context: .
       dockerfile: csapitemplate.Api/Dockerfile
 
+  blazor.frontend:
+    image: blazor.frontend
+    build:
+      context: .
+      dockerfile: blazor.Frontend/blazor.Frontend/Dockerfile
+
+  blazor.frontend.client:
+    image: blazor.frontend.client
+    build:
+      context: .
+      dockerfile: blazor.Frontend/blazor.Frontend.Client/Dockerfile
+

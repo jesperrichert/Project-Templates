@@ -1,0 +1,24 @@
+﻿@page "/"
+@using LucideBlazor
+@using ShadcnBlazor.Buttons
+@using ShadcnBlazor.Extras.Toasts
+
+@inject ToastService ToastService
+
+<PageTitle>Home</PageTitle>
+
+<h1 class="text-2xl text-green-500">Hello, world!</h1>
+
+<div class="flex flex-wrap items-center gap-2 md:flex-row">
+    <Button Variant="ButtonVariant.Outline" Size="ButtonSize.Icon" @onclick="CallbackAsync">
+        <ArrowUpIcon/>
+    </Button>
+</div>
+
+@code
+{
+    private async Task CallbackAsync()
+    {
+        await ToastService.SuccessAsync("Jesper ist gay", "Mit dortNico");
+    }
+}
