@@ -3,13 +3,17 @@
     "id": "papertemplate",
     "name": "Kotlin Minecraft Paper",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
-    "branch": "template@kt-mc-paper"
+    "branch": "template@kt-mc-paper",
+    "install_command": "ls",
+    "open_command": "idea"
   },
   {
     "id": "velocitytemplate",
     "name": "Kotlin Minecraft Velocity",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
-    "branch": "template@kt-mc-velocity"
+    "branch": "template@kt-mc-velocity",
+    "open_command": "",
+    "install_command": ""
   },
   {
     "id": "react-router-vite",
