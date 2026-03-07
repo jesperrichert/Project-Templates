@@ -1,7 +1,7 @@
 use clap::{Parser, Subcommand};
-use projectler::config::Config;
 use dirs::config_dir;
 use fancy::printcoln;
+use projectler::config::Config;
 use std::fs;
 use std::fs::File;
 use std::io::Write;
@@ -59,8 +59,6 @@ async fn main() {
                     if p.id == *id {
                         printcoln!("[white|bold]>> Found project with ID {}", id);
                         p.create(path.clone(), name.clone());
-                    } else {
-                        printcoln!("[i]No Template found...");
                         return;
                     }
                 }),

@@ -1,7 +1,8 @@
 use fancy::printcoln;
 use serde::{Deserialize, Serialize};
 use std::fs;
-use std::fs::{write, File};
+use std::fs::write;
+use std::io::Read;
 use std::path::PathBuf;
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -63,14 +64,11 @@ pub(crate) fn build_project(path: &String, id: String, name: String) {
         if path.is_dir() {
             build_project(&path.display().to_string(), id.clone(), name.clone());
         } else if path.is_file() {
-            File::open(&path).expect("Failed to open file");
-
-            let content = fs::read_to_string(path.clone().to_path_buf())
-                .expect("Failed to read file")
-                .replace(id.as_str(), &name);
+            let bytes = fs::read(&path).unwrap();
+            let contents = String::from_utf8_lossy(&bytes).replace(id.as_str(), &name);
 
             fs::remove_file(&path).expect("Failed to remove file");
-            write(path, content).expect("Failed to write to file");
+            write(path, contents).expect("Failed to write to file");
         }
     });
 }
