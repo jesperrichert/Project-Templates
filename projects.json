@@ -61,6 +61,6 @@
     "id": "blazor",
     "name": "C# Blazor",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
-    "branch": "template@c#-blazor"
+    "branch": "template@blazor"
   }
 ]
