@@ -1,17 +1,18 @@
-namespace csapitemplate.Api;
+using blazor.Api.Startup;
+
+namespace blazor.Api;
 
 public static class Program
 {
     public static async Task Main(String[] args)
     {
-        var builder = WebApplication.CreateSlimBuilder(args);
-        var startup = new Startup.Startup();
+        var builder = WebApplication.CreateBuilder(args);
 
-        await startup.PerformPreBuildAsync(builder);
+        builder.PerformPreBuild();
 
         var application = builder.Build();
 
-        await startup.PerformPostBuildAsync(application);
+        application.PerformPostBuild();
 
         await application.RunAsync();
     }

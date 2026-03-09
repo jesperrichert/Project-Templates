@@ -1,9 +1,9 @@
 ﻿services:
-  csapitemplate.api:
-    image: csapitemplate.api
+  blazor.api:
+    image: blazor.api
     build:
       context: .
-      dockerfile: csapitemplate.Api/Dockerfile
+      dockerfile: blazor.Api/Dockerfile
 
   blazor.frontend:
     image: blazor.frontend

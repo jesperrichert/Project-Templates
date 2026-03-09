@@ -1,12 +1,36 @@
-﻿@using ShadcnBlazor.Extras.Toasts
+﻿@using blazor.Frontend.UI.Base.Components.Auth
+@using Microsoft.AspNetCore.Components.Authorization
+@using ShadcnBlazor.Extras.Toasts
 @using ShadcnBlazor.Portals
 
-<Router AppAssembly="@typeof(App).Assembly" NotFoundPage="typeof(UI.Shared.Partials.NotFound)">
-    <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
-        <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
-    </Found>
-</Router>
+<AuthorizeView>
+    <ChildContent>
+        <Router AppAssembly="@typeof(App).Assembly" NotFoundPage="typeof(UI.Shared.Partials.NotFound)">
+            <Found Context="routeData">
+                <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)"/>
+                <FocusOnNavigate RouteData="@routeData" Selector="h1"/>
+                <AuthorizeRouteView RouteData="routeData" DefaultLayout="typeof(MainLayout)">
+                    <NotAuthorized Context="authRouteViewContext">
+                        <AccessDenied></AccessDenied>
+                    </NotAuthorized>
+                </AuthorizeRouteView>
+            </Found>
+        </Router>
+    </ChildContent>
+    <Authorizing>
+        <Authenticating/>
+    </Authorizing>
+    <NotAuthorized>
+        @if (context.User.Identity?.IsAuthenticated ?? false)
+        {
+            <AccessDenied/>
+        }
+        else
+        {
+            <Authentication/>
+        }
+    </NotAuthorized>
+</AuthorizeView>
 
-<PortalOutlet />
-<ToastLauncher />
+<PortalOutlet/>
+<ToastLauncher/>

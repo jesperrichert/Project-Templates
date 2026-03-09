@@ -1,12 +1,12 @@
-using csapitemplate.Api.Configuration;
+using blazor.Api.Configuration;
 using Scalar.AspNetCore;
 
-namespace csapitemplate.Api.Startup;
+namespace blazor.Api.Startup;
 
 public partial class Startup
 {
     private static void AddConfig(WebApplicationBuilder builder)
     {
-        builder.Services.AddOptions<ApiOptions>().BindConfiguration("csapitemplate:Api");
+        builder.Services.AddOptions<OidcOptions>().BindConfiguration("blazor:Oidc");
     }
 }

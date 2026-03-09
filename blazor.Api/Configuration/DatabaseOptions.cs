@@ -1,4 +1,4 @@
-namespace csapitemplate.Api.Configuration;
+namespace blazor.Api.Configuration;
 
 public class DatabaseOptions
 {

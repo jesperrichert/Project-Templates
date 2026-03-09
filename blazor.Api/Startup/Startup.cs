@@ -1,18 +1,21 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace csapitemplate.Api.Startup;
+namespace blazor.Api.Startup;
 
-public partial class Startup
+public static partial class Startup
 {
-    public  async Task PerformPreBuildAsync(WebApplicationBuilder builder)
+    public static void PerformPreBuild(this WebApplicationBuilder builder)
     {
-        AddOpenApi(builder);
+        AddBase(builder);
         AddAuth(builder);
+        AddDatabase(builder);
+        AddConfig(builder);
     }
 
-    public async Task PerformPostBuildAsync(WebApplication application)
+    public static void PerformPostBuild(this WebApplication application)
     {
-        UseOpenApi(application);
+        UseBase(application);
         UseAuth(application);
+        MapBase(application);
     }
 }

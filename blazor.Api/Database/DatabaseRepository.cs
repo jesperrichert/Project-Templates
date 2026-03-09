@@ -1,7 +1,7 @@
-using csapitemplate.Api.Database.Interfaces;
+using blazor.Api.Database.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace csapitemplate.Api.Database;
+namespace blazor.Api.Database;
 
 public class DatabaseRepository<T> where T : class
 {

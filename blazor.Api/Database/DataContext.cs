@@ -1,14 +1,14 @@
-using csapitemplate.Api.Configuration;
-using csapitemplate.Api.Database.Entities;
+using blazor.Api.Configuration;
+using blazor.Api.Database.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.Options;
 
-namespace csapitemplate.Api.Database;
+namespace blazor.Api.Database;
 
 public class DataContext : DbContext
 {
-    public DbSet<BaseModel> BaseModels { get; set; }
+    public DbSet<User> Users { get; set; }
 
     private readonly IOptions<DatabaseOptions> Options;
 

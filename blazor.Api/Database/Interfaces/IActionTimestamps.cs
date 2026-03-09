@@ -1,4 +1,4 @@
-namespace csapitemplate.Api.Database.Interfaces;
+namespace blazor.Api.Database.Interfaces;
 
 public class IActionTimestamps
 {
