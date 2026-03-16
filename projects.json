@@ -16,6 +16,12 @@
     "install_command": ""
   },
   {
+    "id": "go-web",
+    "name": "Go Web (GIN, DB, ...)",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@go"
+  },
+  {
     "id": "react-router-vite",
     "name": "React Router Template",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
