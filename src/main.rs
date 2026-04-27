@@ -1,30 +1,28 @@
-use actix_web::{cookie::time::macros::date, dev::AppConfig, web, App, HttpServer};
-use postgres::Client;
+use actix_web::{web, App, HttpServer};
+use redis::Connection;
 use std::sync::Mutex;
 
 pub mod database;
 pub mod routes;
 
 pub struct ApiConfig {
-    postgres: Client,
+    pub postgres: tokio_postgres::Client,
+    pub redis_client: Mutex<Connection>,
 }
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     let redis_uri = std::env::var("REDIS_URI").expect("redis_uri not set");
 
-    let apiConfig = ApiConfig {
-        postgres= database::postgres::postgres()
-    }
-    
-    let route_config = web::Data::new(RouteConfig {
-        redis_client: Mutex::new(connect_redis(redis_uri)),
+    let api_config = web::Data::new(ApiConfig {
+        postgres: database::postgres::postgres().await.unwrap(),
+        redis_client: Mutex::new(database::redis::redis(redis_uri)),
     });
 
     HttpServer::new(move || {
         App::new()
-            .app_data(route_config.clone())
-            .service(routes::index)
+            .app_data(api_config.clone())
+            .service(routes::index::route)
     })
     .bind(("0.0.0.0", 8080))?
     .run()

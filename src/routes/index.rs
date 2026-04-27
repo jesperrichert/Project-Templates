@@ -1,29 +1,24 @@
-use crate::types::route::RouteConfig;
-use actix_web::cookie::time::macros::date;
-use actix_web::{HttpRequest, HttpResponse, Responder, error, get, post, web};
-use redis::TypedCommands;
+use crate::ApiConfig;
+use actix_web::{get, post, web, HttpResponse, Responder};
 use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct CloudGETRequest {
-    key: String,
+    data: String,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct CloudGETResponse {
+pub struct GETResponse {
     message: String,
-    data: String,
     success: bool,
 }
 
 #[get("/")]
-async fn route(
-    data: web::Query<CloudGETRequest>,
-    config: web::Data<RouteConfig>,
-) -> impl Responder {
-    HttpResponse::Ok().json(CloudGETResponse {
-        message: "Export from the Cloud...".to_string(),
-        data: exists.unwrap(),
+pub async fn route( 
+    // data: web::Query<CloudGETRequest>,
+    config: web::Data<ApiConfig>) -> impl Responder {
+    HttpResponse::Ok().json(GETResponse {
+        message: "Hello World".to_string(),
         success: true,
     })
 }
