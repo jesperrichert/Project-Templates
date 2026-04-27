@@ -1,6 +1,6 @@
-package dev.xyzjesper.papertemplate.database
+package zip.jespersen.papertemplate.database
 
-import dev.xyzjesper.papertemplate.Main
+import zip.jespersen.papertemplate.Main
 import net.crystopia.crystalshard.utils.Log
 import org.ktorm.database.Database
 import java.io.File
@@ -10,7 +10,7 @@ object DatabaseManager {
 
     var database: Database? = null
     var databaseFile = File("plugins/${Main.instance.name}/plugin.db")
-    
+
     fun init() {
         try {
             if (!databaseFile.exists())

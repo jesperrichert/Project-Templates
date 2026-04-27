@@ -1,6 +1,6 @@
-package dev.xyzjesper.papertemplate.config
+package zip.jespersen.papertemplate.config
 
-import dev.xyzjesper.papertemplate.Main
+import zip.jespersen.papertemplate.Main
 import java.io.File
 
 object ConfigManager {
@@ -23,5 +23,5 @@ object ConfigManager {
     fun reload() {
         settings = loadFromFile(settingsFile)
     }
-    
+
 }

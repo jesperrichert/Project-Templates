@@ -1,4 +1,4 @@
-package dev.xyzjesper.papertemplate.config
+package zip.jespersen.papertemplate.config
 
 import kotlinx.serialization.json.Json
 import java.io.File

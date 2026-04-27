@@ -1,19 +1,19 @@
-﻿package dev.xyzjesper.papertemplate
+﻿package zip.jespersen.papertemplate
 
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIPaperConfig
-import dev.xyzjesper.papertemplate.config.ConfigManager
-import dev.xyzjesper.papertemplate.database.DatabaseManager
-import dev.xyzjesper.papertemplate.utils.Statics
+import zip.jespersen.papertemplate.config.ConfigManager
+import zip.jespersen.papertemplate.database.DatabaseManager
+import zip.jespersen.papertemplate.utils.Statics
 import io.github.cdimascio.dotenv.Dotenv
 import io.github.cdimascio.dotenv.dotenv
 import net.crystopia.crystalshard.utils.Log
 import org.bukkit.plugin.java.JavaPlugin
 
-class Main : JavaPlugin() {
+class papertemplatePlugin : JavaPlugin() {
 
     companion object {
-        lateinit var instance: Main
+        lateinit var instance: papertemplatePlugin
     }
 
     init {
@@ -21,7 +21,7 @@ class Main : JavaPlugin() {
     }
 
     lateinit var dotEnv: Dotenv
-    
+
     override fun onLoad() {
         CommandAPI.onLoad(CommandAPIPaperConfig(this).silentLogs(true))
 

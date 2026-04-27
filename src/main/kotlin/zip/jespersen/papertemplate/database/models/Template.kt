@@ -1,4 +1,4 @@
-package dev.xyzjesper.papertemplate.database.models
+package zip.jespersen.papertemplate.database.models
 
 import org.ktorm.schema.Table
 import org.ktorm.schema.int

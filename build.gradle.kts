@@ -54,13 +54,19 @@ dependencies {
     implementation("io.github.cdimascio:dotenv-kotlin:$dotenvVersion")
     
     // CrystalShard
-    implementation("net.crystopia:crystalshard:$crystalShardVersion")
+    implementation("net.crystopia.crystalshard:common:$crystalShardVersion")
+
+    implementation("net.crystopia.crystalshard:paper-core:$crystalShardVersion")
+    implementation("net.crystopia.crystalshard:paper-box:$crystalShardVersion")
+    implementation("net.crystopia.crystalshard:paper-custom:$crystalShardVersion")
+    implementation("net.crystopia.crystalshard:paper-dhl:$crystalShardVersion")
+    implementation("net.crystopia.crystalshard:paper-pack:$crystalShardVersion")
+    implementation("net.crystopia.crystalshard:paper-panic:$crystalShardVersion")
+    implementation("net.crystopia.crystalshard:paper-simulacrum:$crystalShardVersion")
     
     // Paper
     // compileOnly("io.papermc.paper:paper-api:${mcVersion}-R0.1-SNAPSHOT")
     paperweight.paperDevBundle("$mcVersion-R0.1-SNAPSHOT")
-    // Twilight
-    implementation("gg.flyte:twilight:${twilightVersion}")
 
     // Command API
     compileOnly("dev.jorel:commandapi-paper-core:${commandAPIVersion}")
