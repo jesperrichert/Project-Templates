@@ -1,4 +1,4 @@
-package dev.xyzjesper.velocitytemplate.config
+package zip.jespersen.velocitytemplate.config
 
 import kotlinx.serialization.json.Json
 import java.io.File

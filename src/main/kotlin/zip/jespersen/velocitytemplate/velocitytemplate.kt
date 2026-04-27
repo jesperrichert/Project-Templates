@@ -1,4 +1,4 @@
-package dev.xyzjesper.velocitytemplate
+package zip.jespersen.velocitytemplate
 
 import com.google.inject.Inject
 import com.velocitypowered.api.event.Subscribe
@@ -8,7 +8,7 @@ import com.velocitypowered.api.plugin.Plugin
 import com.velocitypowered.api.proxy.ProxyServer
 import dev.jorel.commandapi.CommandAPI
 import dev.jorel.commandapi.CommandAPIVelocityConfig
-import dev.xyzjesper.velocitytemplate.utils.PluginMessaging
+import zip.jespersen.velocitytemplate.utils.PluginMessaging
 import io.github.cdimascio.dotenv.Dotenv
 import java.util.logging.Logger
 
@@ -20,7 +20,7 @@ import java.util.logging.Logger
     authors = ["xyzjesper"],
     description = "velocitytemplate"
 )
-class Main {
+class velocitytemplate {
     val id = "velocitytemplate"
     var server: ProxyServer
     var logger: Logger

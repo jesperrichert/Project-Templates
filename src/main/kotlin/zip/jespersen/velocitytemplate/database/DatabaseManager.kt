@@ -1,7 +1,7 @@
-package dev.xyzjesper.velocitytemplate.database
+package zip.jespersen.velocitytemplate.database
 
-import dev.xyzjesper.velocitytemplate.Main
-import dev.xyzjesper.velocitytemplate.utils.Log
+import zip.jespersen.velocitytemplate.Main
+import zip.jespersen.velocitytemplate.utils.Log
 import org.ktorm.database.Database
 import java.io.File
 import kotlin.system.exitProcess

@@ -1,4 +1,4 @@
-package dev.xyzjesper.velocitytemplate.utils
+package zip.jespersen.velocitytemplate.utils
 
 import java.text.SimpleDateFormat
 import java.util.*

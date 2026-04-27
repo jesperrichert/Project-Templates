@@ -1,8 +1,8 @@
-package dev.xyzjesper.velocitytemplate.utils
+package zip.jespersen.velocitytemplate.utils
 
 import com.velocitypowered.api.proxy.messages.ChannelIdentifier
 import com.velocitypowered.api.proxy.server.RegisteredServer
-import dev.xyzjesper.velocitytemplate.Main
+import zip.jespersen.velocitytemplate.Main
 import java.util.Optional
 
 

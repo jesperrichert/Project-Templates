@@ -1,4 +1,4 @@
-package dev.xyzjesper.velocitytemplate.config
+package zip.jespersen.velocitytemplate.config
 
 interface Configurable {
     fun save()

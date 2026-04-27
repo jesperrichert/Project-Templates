@@ -1,8 +1,8 @@
-package dev.xyzjesper.velocitytemplate.utils
+package zip.jespersen.velocitytemplate.utils
 
-import dev.xyzjesper.velocitytemplate.database.DatabaseManager
-import dev.xyzjesper.velocitytemplate.Main
-import dev.xyzjesper.velocitytemplate.config.ConfigManager
+import zip.jespersen.velocitytemplate.database.DatabaseManager
+import zip.jespersen.velocitytemplate.Main
+import zip.jespersen.velocitytemplate.config.ConfigManager
 import io.github.cdimascio.dotenv.dotenv
 import java.io.File
 

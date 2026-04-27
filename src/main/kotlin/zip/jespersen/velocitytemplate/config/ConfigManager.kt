@@ -1,6 +1,6 @@
-package dev.xyzjesper.velocitytemplate.config
+package zip.jespersen.velocitytemplate.config
 
-import dev.xyzjesper.velocitytemplate.Main
+import zip.jespersen.velocitytemplate.Main
 import java.io.File
 
 object ConfigManager {

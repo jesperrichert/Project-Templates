@@ -18,6 +18,7 @@ val rethisVersion = properties["rethisVersion"] as String
 val kormVersion = properties["kormVersion"] as String
 val dotenvVersion = properties["dotenvVersion"] as String
 val adventureVersion = properties["adventureVersion"] as String
+val crystalShardVersion = properties["crystalShardVersion"] as String
 
 group = groupID
 version = projectVersion
@@ -33,6 +34,7 @@ repositories {
     maven {
         url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
     }
+    maven("https://repo.jespersen.zip/releases")
 }
 
 dependencies {
@@ -52,12 +54,16 @@ dependencies {
 
     // ENV
     implementation("io.github.cdimascio:dotenv-kotlin:${dotenvVersion}")
-    
+
     // CommandAPI
     implementation("dev.jorel:commandapi-velocity-shade:$commandAPIVersion")
 
     // Adventure API
     implementation("net.kyori:adventure-api:4.18.0")
+
+    // CrystalShard API
+    implementation("net.crystopia.crystalshard:common:$crystalShardVersion")
+    implementation("net.crystopia.crystalshard:velocity:$crystalShardVersion")
 }
 
 java {
