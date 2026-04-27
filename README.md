@@ -1,6 +1,7 @@
 # projectler
 
-> **Warning:** Please note that projectler is currently in beta.
+> [!WARNING]
+> Please note that projectler is currently in beta.
 
 CLI tool to manage project templates from Git.  
 To create a template, define a `projects.json` with the required structure.
