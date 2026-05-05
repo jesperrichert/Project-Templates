@@ -16,10 +16,16 @@
     "install_command": ""
   },
   {
-    "id": "go-web",
-    "name": "Go Web (GIN, DB, ...)",
+    "id": "go-api",
+    "name": "Go Api (GIN, DB, REST)",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
-    "branch": "template@go"
+    "branch": "template@go-api"
+  },
+  {
+    "id": "go-vite-rr",
+    "name": "Go & Vite (Vite + React + Router + Go-API)",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@go-vite-react-router"
   },
   {
     "id": "react-router-vite",
@@ -62,6 +68,18 @@
     "name": "Rust Default",
     "repository_url": "https://github.com/xyzjesper/Project-Templates",
     "branch": "template@rust-default"
+  },
+  {
+    "id": "rust-api",
+    "name": "Simple API Template in Rust",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@rust-api"
+  },
+  {
+    "id": "rust-app",
+    "name": "gpui Rust App",
+    "repository_url": "https://github.com/xyzjesper/Project-Templates",
+    "branch": "template@rust-app"
   },
   {
     "id": "blazor",
