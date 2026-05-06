@@ -5,9 +5,9 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"go.template/internal/model"
-	"go.template/internal/repository"
-	"go.template/internal/services"
+	"go.go-api/internal/model"
+	"go.go-api/internal/repository"
+	"go.go-api/internal/services"
 	"gorm.io/gorm"
 )
 

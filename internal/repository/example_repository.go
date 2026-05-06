@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"go.template/internal/model"
+	"go.go-api/internal/model"
 )
 
 type ExampleRepository struct {

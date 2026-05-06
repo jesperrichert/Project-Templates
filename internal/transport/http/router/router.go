@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"go.template/internal/transport/http"
+	"go.go-api/internal/transport/http"
 )
 
 type RouterConfig struct {

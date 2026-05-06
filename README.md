@@ -1,3 +1,3 @@
-# Go-Template
+# Go-go-api
 
-a Template for a go api Project with gin and gorm
+a go-api for a go api Project with gin and gorm

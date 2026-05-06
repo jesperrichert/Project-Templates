@@ -1,6 +1,6 @@
 package main
 
-import "go.template/internal/config"
+import "go.go-api/internal/config"
 
 
 func main() { 
