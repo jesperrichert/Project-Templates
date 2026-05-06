@@ -1,3 +1,3 @@
-# Go-Template
+# Go-go-vite-rr
 
-a Template for a go api Project with gin and gorm
+a go-vite-rr for a go api Project with gin and gorm

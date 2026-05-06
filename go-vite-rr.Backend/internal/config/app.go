@@ -2,10 +2,10 @@ package config
 
 import (
 	"github.com/gin-gonic/gin"
-	"go.template/internal/repository"
-	"go.template/internal/services"
-	"go.template/internal/transport/http"
-	"go.template/internal/transport/http/router"
+	"go.go-vite-rr/internal/repository"
+	"go.go-vite-rr/internal/services"
+	"go.go-vite-rr/internal/transport/http"
+	"go.go-vite-rr/internal/transport/http/router"
 	"gorm.io/gorm"
 )
 

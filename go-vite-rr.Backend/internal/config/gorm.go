@@ -3,7 +3,7 @@ package config
 import (
 	"log"
 
-	"go.template/internal/model"
+	"go.go-vite-rr/internal/model"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )

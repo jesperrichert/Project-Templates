@@ -1,4 +1,4 @@
-module go.template
+module go.go-vite-rr
 
 go 1.25.4
 
