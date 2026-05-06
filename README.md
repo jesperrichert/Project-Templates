@@ -19,3 +19,12 @@ To create a project from a template, use:
 `projectler create -i <id> -n <name> -p <path>`
 
 Use `projectler --help` to show the help message.
+
+
+### // TODO
+
+- Add Rust Tauri Template
+- Add Rust clap/ratatui Template
+- Add Rust Web Template (leptos, yew, sycamore, ...)
+- Add Rust App Template (egui, dioxus, ...)
+- Add C# App Template (...)
